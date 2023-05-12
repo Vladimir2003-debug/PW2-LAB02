@@ -88,21 +88,31 @@ function getURLCode() {
  */
 function createTable() {
 
-    const nValues = document.getElementById("numberValues");
-
+    const nValues = document.querySelector("#numberValues").value;
     let table = `
-    <input type="number" id="value"><br>
-    <button onclick="addRow()">Ingresar</button>
+    <input type="number" id="value" value="10"><br>
+    <button onclick="addRows(${nValues})">Ingresar</button>
     <table id="table">
-    </table>
-    `;
-
+        <tr>
+            <td>SUMANDOS<td>
+        </tr>
+    </table>`
+    ;
 
     document.getElementById("tableSum").innerHTML = table;
 }
-function addRow() {
-    var table = document.getElementById("table");
-    console.log(table);
+
+function addRows(nValues) {
+
+    const tabla = document.getElementById("table");
+    var newRow = document.createElement("tr");
+
+    var newCeil = document.createElement("td");
+
+    newCeil.innerHTML = document.querySelector("#value").value;
+    newRow.appendChild(newCeil);
+
+    tabla.appendChild(newRow);
 }
 
 function sumMonths(){
