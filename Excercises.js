@@ -49,7 +49,6 @@ function daysForArequipa(date) {
 
 }
 
-
 /** Ejercicio 04: Escribir un página que reciba el URL de la sesión de google meet de hoy 
  * y devuelva el código de la sesión sin guiones separadores
  */
@@ -64,5 +63,24 @@ function getURLCode() {
  *  tabla de valores dinámica. La idea es crear una página web con un formulario que te permita decir 
  *  cuantos valores tendrá la tabla, luego, al enviar el formulario la tabla se debe crear dinámicamente,
  *   junto con otro botón de envió para calcular la suma.
- * 
  */
+function createTable() {
+
+    const nValues = document.getElementById("numberValues");
+
+    let table = `
+    <input type="number" id="value"><br>
+    <table>
+    `;
+
+    for(let i = 0; i < nValues; i++) {
+        table += 
+        "<tr>" 
+            + "<th>" + document.querySelector("#value").value + "</th>" 
+        "</tr>";               
+    }
+
+    table+= "</table>"
+
+    document.getElementById("table").innerHTML = table;
+}
