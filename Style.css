@@ -10,6 +10,12 @@ button {
     height: 30px;
 }
 
-#bForDays {
+button#bForDays {
     height: 60px;
 }
+
+table {
+    border: 2px solid;
+    border-color: white;
+}
+
