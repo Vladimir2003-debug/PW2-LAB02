@@ -16,20 +16,36 @@ function getDayName(date) {
 function reverseWord() {
     const word = document.querySelector("#word").value;
 
+    let length = word.length - 1;
+    let reverse =  "";
 
+    for(let i = length; i >= 0; i--) {
+        reverse += word[i];
+    }
+
+    document.getElementById("reverse").innerHTML = reverse;
 
 }
 
 /** Ejercicio 03: Escribir una página que muestre cuántos días faltan para el día de Arequipa!
- * 
+ *  @param {Date} date La fecha actual 
  */
 function daysForArequipa(date) {
 
-    const dayArequipa = new Date("",15,7);
-    console.log(dayArequipa);
-    dayArequipa.setYear(2013);
-    console.log(dayArequipa);
-    
+    const dayArequipa = new Date(date.getYear(),15,7);
+    var day = date.getDay();
+    var month = date.getMonth();
+    var year = date.getYear();
+
+    daysMonths = [31.28,31,30,31,30,31,31,30,31,30,31];
+
+    if(month > 7){
+
+    }  else if(month < 7) {
+
+    } else {
+
+    }
 
 }
 
