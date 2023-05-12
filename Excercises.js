@@ -32,22 +32,45 @@ function reverseWord() {
  */
 function daysForArequipa(date) {
 
-    const dayArequipa = new Date(date.getYear(),15,7);
-    var day = date.getDay();
+    var day = date.getDate();
     var month = date.getMonth();
-    var year = date.getYear();
 
     daysMonths = [31.28,31,30,31,30,31,31,30,31,30,31];
 
-    if(month > 7){
-
-    }  else if(month < 7) {
-
+    let total = 0;
+    
+    if(month < 7){
+        total += daysMonths[month] - day;
+        total += sumMonths(daysMonths,month,6) + 15;
+    }  else if(month > 7) {
+        total += daysMonths[month] - day;
+        total += sumMonths(daysMonths,month + 1,11);
+        total += sumMonths(daysMonths,0,6) + 15;
     } else {
+        total = 15 - day;
+    }   
 
-    }
+    document.getElementById("diasFaltantes").innerHTML = total;
 
 }
+/**
+ * Suma de los meses del año
+ * @param {Array} months Los dias de los meses del año
+ * @param {number} start El mes con que empieza
+ * @param {number} end El mes con que termina
+ * @return {number} La suma total
+ */
+
+function sumMonths(months,start,end) {
+    var suma = 0;
+    for(let i = start ;i < end ; i++) {
+        suma += months[i];
+    }
+
+    return suma;
+}
+
+
 
 /** Ejercicio 04: Escribir un página que reciba el URL de la sesión de google meet de hoy 
  * y devuelva el código de la sesión sin guiones separadores
