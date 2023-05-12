@@ -5,7 +5,6 @@
  */
 function getDayName(date) {
     const days = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
-    console.log(date.getDay());
     document.getElementById("dayName").innerHTML = days[date.getDay()];
 }
 
@@ -93,17 +92,19 @@ function createTable() {
 
     let table = `
     <input type="number" id="value"><br>
-    <table>
+    <button onclick="addRow()">Ingresar</button>
+    <table id="table">
+    </table>
     `;
 
-    for(let i = 0; i < nValues; i++) {
-        table += 
-        "<tr>" 
-            + "<th>" + document.querySelector("#value").value + "</th>" 
-        "</tr>";               
-    }
 
-    table+= "</table>"
+    document.getElementById("tableSum").innerHTML = table;
+}
+function addRow() {
+    var table = document.getElementById("table");
+    console.log(table);
+}
 
-    document.getElementById("table").innerHTML = table;
+function sumMonths(){
+    console.log("sumMonths");
 }
