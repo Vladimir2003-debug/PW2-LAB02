@@ -13,11 +13,26 @@ function getDayName(date) {
 /** Ejercicio 02: Escriba una página web que reciba un texto y al presionar un botón muestre el mismo
  *  texto invertido en otra sección (div). Por ejemplo si se escribe “Hola”, se mostraría como “aloH”.
  */
+function reverseWord() {
+    const word = document.querySelector("#word").value;
 
+
+
+}
 
 /** Ejercicio 03: Escribir una página que muestre cuántos días faltan para el día de Arequipa!
  * 
  */
+function daysForArequipa(date) {
+
+    const dayArequipa = new Date("",15,7);
+    console.log(dayArequipa);
+    dayArequipa.setYear(2013);
+    console.log(dayArequipa);
+    
+
+}
+
 
 /** Ejercicio 04: Escribir un página que reciba el URL de la sesión de google meet de hoy 
  * y devuelva el código de la sesión sin guiones separadores
