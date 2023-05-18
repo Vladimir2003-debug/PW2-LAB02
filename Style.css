@@ -19,3 +19,6 @@ table {
     border-color: white;
 }
 
+p#count {
+    display :none;
+}
