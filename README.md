@@ -46,7 +46,7 @@
 <tr><td colspan="6">INTEGRANTES:
 <ul>
 <li>Vladimir Arturo Sulla Quispe - vsullaq@unsa.edu.pe</li>
-<li>GITHUB https://github.com/Vladimir2003-debug/PW2-LAB01.git</li>
+<li>GITHUB https://github.com/Vladimir2003-debug/PW2-LAB02 </li>
 </ul>
 </td>
 </<tr>
