@@ -306,17 +306,12 @@ Entonces quedaria de esta forma
 
 <img src="img/testEjercicio5.jpg">
 
-### Ejercicio 06
-Utilice la herramienta flipgrid - https://info.flipgrid.com/ envie un video en el tema "Presentacion y ejemplo deJavaScript" ponga aquí los enlaces de sus envíos.
-
-#### Solucion 
 
 ## CUESTIONARIO
 - Pruebe este código de arrayGenerator() en la página https://jslint.com/
 - Revisar esta discusión en stackoverflow - https://stackoverflow.com/questions/4852017/how-to-initialize-an-arrays-length-in-javascript
     - ¿Cómo se pueden resolver los warnings?
     - ¿Se puede modificar la solución usando map? ¿Cómo?
-
 ## REFERENCIAS
 - Javascript tutorial. https://www.w3schools.com/javascript/default.asp, 2021. Accesed: 02-09-2021.
 - Loiane Groner. Learning JavaScript Data Structures and Algorithms: Write complex and powerful
