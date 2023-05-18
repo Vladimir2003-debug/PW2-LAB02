@@ -87,21 +87,31 @@ function getURLCode() {
  *   junto con otro botón de envió para calcular la suma.
  */
 function createTable() {
-
-    const nValues = document.querySelector("#numberValues").value;
-    let table = `
-    <input type="number" id="value" value="10"><br>
-    <button onclick="addRows(${nValues})">Ingresar</button>
+    var nValues = document.querySelector("#numberValues").value;
+    nValues++;
+    let tableHtml = `
+    <input type="number" id="value"><br>
+    <button onclick="addRows(${nValues})" id="create">Ingresar</button>
+    <div id="resultSum" hidden>
+        <p id="sum"></p>
+        <button onclick="getSum()">Obtener Suma</button>
+    </div>
     <table id="table">
         <tr>
             <td>SUMANDOS<td>
         </tr>
-    </table>`
+    </table>
+    `
     ;
+    
+    document.getElementById("tableSum").innerHTML = tableHtml;
+    activateButtonEnter("value","create");
 
-    document.getElementById("tableSum").innerHTML = table;
 }
-
+/**
+ * Metodo para añadir filas a la tabla
+ * @param {number} nValues Numero de valores que deberia tener la tabla
+ */
 function addRows(nValues) {
 
     const tabla = document.getElementById("table");
@@ -112,9 +122,46 @@ function addRows(nValues) {
     newCeil.innerHTML = document.querySelector("#value").value;
     newRow.appendChild(newCeil);
 
-    tabla.appendChild(newRow);
+    tabla.appendChild(newRow);   
+
+    var length = tabla.rows.length;
+
+    if( length == nValues) {
+        document.getElementById("create").hidden = true;
+        document.getElementById("value").hidden = true;
+        document.getElementById("resultSum").hidden = false;
+    }
+
 }
 
-function sumMonths(){
-    console.log("sumMonths");
+/**
+ * Funcion para obtener la suma de todos los valores de la tabla 
+ */
+function getSum() {
+
+    const tChildNodes = document.getElementById("table").childNodes;
+    var sum = 0;
+    var length = tChildNodes.length;
+    for(let i = 2; i < length; i++) {
+        sum += parseFloat(tChildNodes[i].childNodes[0].textContent);
+    }
+
+    document.getElementById("sum").innerHTML = sum;
+}
+/**
+ * Funcion que sirve para cuando el input de ingreso de valores de la tabla se vacie y para que al presionar
+ * enter se envie automaticamente los valores de la tabla.
+ * @param {string} idInput: El id del input en donde estan los valores
+ * @param {string} idButton : El id del botton que envia los valores en el input
+ */
+
+function activateButtonEnter(idInput, idButton) {
+    var input = document.getElementById(idInput);
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") { 
+            event.preventDefault();        
+            document.getElementById(idButton).click();
+            input.value = null;
+        }
+    });
 }
